@@ -2,6 +2,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import MainHeader from './MainHeader'
 import Game from './Game'
+import '../App.css'
 
 function App() {
   return (
