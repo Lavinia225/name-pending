@@ -4,6 +4,8 @@ import MainHeader from './MainHeader'
 import DevMode from './DevMode'
 import Game from './Game'
 import '../App.css'
+import PlayerList from './PlayerList'
+import MobList from './MobList'
 
 function App() {
   return (
@@ -15,6 +17,12 @@ function App() {
         </Route>
         <Route path='/dev'>
           <DevMode />
+        </Route>
+        <Route path='/dev/players'>
+          <PlayerList />
+        </Route>
+        <Route path='/dev/mobs'>
+          <MobList />
         </Route>
       </Switch>
     </div>
