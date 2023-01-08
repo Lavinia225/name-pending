@@ -18,12 +18,6 @@ function App() {
         <Route path='/dev'>
           <DevMode />
         </Route>
-        <Route path='/dev/players'>
-          <PlayerList />
-        </Route>
-        <Route path='/dev/mobs'>
-          <MobList />
-        </Route>
       </Switch>
     </div>
   );
