@@ -6,24 +6,42 @@ function NewEntity({editingMob}){
     const [formData, setFormData] = useState({
         name: '',
         hp: 0,
-        sprite: '',
     })
 
+    function handleChange(e){
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        const fullData = {...formData, sprite: canvasRef.current.toDataURL()}
+        console.log(fullData)
+    }
     
+
+    if (editingMob === true && !formData.ai){
+        formData.ai = 'Default'
+    }
+
     return(
         <div>
-            <form id='new-form'>
-                <label for='Name'>Name: </label>
-                <input type='text' placeholder='Smitty Werbenjagermanjensen...' value={formData.name}></input>
-                <label for="Health">Health: </label>
-                <input type='number' value={formData.hp}></input>
+            <form id='new-form' onSubmit={handleSubmit}>
+                <label htmlFor='Name'>Name: </label>
+                <input type='text' name='name' placeholder='Smitty Werbenjagermanjensen...' value={formData.name} onChange={handleChange}></input>
+                <label htmlFor="Health">Health: </label>
+                <input type='number' name='hp' value={formData.hp} onChange={handleChange}></input>
                 {editingMob ?
                 <>
-                <label for='AI'>AI: </label>
-                <select>
+                <label htmlFor='AI'>AI: </label>
+                <select name='ai' onChange={handleChange}>
                     <option>Default</option> {/*Remember to add these once AI is created */}
+                    <option>Default 2</option>
                 </select>
                 </> : null}
+                <button type='submit'>Submit</button>
             </form>
             <Canvas canvasRef={canvasRef}/>
         </div>

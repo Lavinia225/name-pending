@@ -6,7 +6,7 @@ function PlayerList(){
     return(
         <div id='list'>
             <NavLink to='dev/players/new'>New Player</NavLink>
-            <NewEntity editingMob={false}/>
+            <NewEntity editingMob={true}/> {/*Temporarily set to true*/}
         </div>
     )
 }

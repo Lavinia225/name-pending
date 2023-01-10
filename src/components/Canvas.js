@@ -38,6 +38,7 @@ function Canvas({canvasRef}){
 
     function handleTool(tool){
         setTool(tool)
+        console.log(canvasRef.current)
     }
 
     return(
