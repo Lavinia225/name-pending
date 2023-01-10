@@ -11,8 +11,8 @@ function Canvas({canvasRef}){
 
     function handleMouse(e){
         setMousePos({
-            left: e.pageX- 8,
-            top: e.pageY - 62
+            left: e.pageX - canvasRef.current.getBoundingClientRect().x,
+            top: e.pageY - canvasRef.current.getBoundingClientRect().y
         })
     }
 
@@ -38,7 +38,6 @@ function Canvas({canvasRef}){
 
     function handleTool(tool){
         setTool(tool)
-        console.log(canvasRef.current)
     }
 
     return(
