@@ -11,6 +11,21 @@
     position: flex;
 }
 
-.drawing {
+.canvas {
     border: 5px solid black;
+    float: left;
+}
+
+.drawing {
+    position: relative;
+}
+
+.color-picker {
+    float: left;
+}
+
+.canvas-buttons {
+    position: absolute;
+    top: 220px;
+    left: 0px;
 }
