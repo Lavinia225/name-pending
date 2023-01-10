@@ -26,7 +26,7 @@ function NewEntity({editingMob}){
     }
 
     return(
-        <div>
+        <div id='new-entity'>
             <form id='new-form' onSubmit={handleSubmit}>
                 <label htmlFor='Name'>Name: </label>
                 <input type='text' name='name' placeholder='Smitty Werbenjagermanjensen...' value={formData.name} onChange={handleChange}></input>
