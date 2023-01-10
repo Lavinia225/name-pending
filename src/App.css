@@ -29,3 +29,9 @@
     top: 220px;
     left: 0px;
 }
+
+#new-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}

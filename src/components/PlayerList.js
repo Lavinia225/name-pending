@@ -6,7 +6,7 @@ function PlayerList(){
     return(
         <div id='list'>
             <NavLink to='dev/players/new'>New Player</NavLink>
-            <NewEntity />
+            <NewEntity editingMob={false}/>
         </div>
     )
 }

@@ -4,8 +4,6 @@ import MainHeader from './MainHeader'
 import DevMode from './DevMode'
 import Game from './Game'
 import '../App.css'
-import PlayerList from './PlayerList'
-import MobList from './MobList'
 
 function App() {
   return (
