@@ -10,3 +10,7 @@
 .App {
     position: flex;
 }
+
+.drawing {
+    border: 5px solid black;
+}
