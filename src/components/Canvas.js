@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {SketchPicker} from 'react-color'
+import eraser from '../images/eraser.png'
 
 function Canvas({canvasRef}){
     const [fillStyle, setFillStyle] = useState({"hex": "#000"})
@@ -47,7 +48,9 @@ function Canvas({canvasRef}){
                 <SketchPicker disableAlpha={true} className="color-picker" color={fillStyle.hex} onChange={updateColor}/>
                 <div className='canvas-buttons'>
                     <button onClick={()=>handleTool('pencil')}>✏️</button>
-                    <button onClick={()=>handleTool('eraser')}>Eraser</button>
+                    <button onClick={()=>handleTool('eraser')}>
+                        <img src={eraser}></img>
+                    </button>
                     <button onClick={clearCanvas}>🗑️</button>
                 </div>
             </div>
