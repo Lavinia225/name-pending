@@ -18,6 +18,23 @@ function NewEntity({editingMob}){
     function handleSubmit(e){
         e.preventDefault()
         const fullData = {...formData, sprite: canvasRef.current.toDataURL()} //Remember to later put a POST request in here
+        let link = process.env.REACT_APP_API_URL
+
+        if (editingMob){
+            link += '/mobs'
+        }
+        else{
+            link += '/players'
+        }
+
+        fetch(link, {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(fullData)
+        })
     }
     
 
