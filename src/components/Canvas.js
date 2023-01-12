@@ -8,6 +8,7 @@ function Canvas({canvasRef}){
         left: 0,
         top: 0
     })
+    const [size, setSize] = useState(10)
     const [tool, setTool] = useState('pencil')
 
     function handleMouse(e){
@@ -26,10 +27,10 @@ function Canvas({canvasRef}){
 
         if (tool === 'pencil'){
             ctx.fillStyle = fillStyle.hex
-            ctx.fillRect(mousePos.left - 10, mousePos.top - 10, 10, 10)
+            ctx.fillRect(mousePos.left - size, mousePos.top - size, size, size)
         }
         else{
-            ctx.clearRect(mousePos.left - 10, mousePos.top - 10, 10, 10)
+            ctx.clearRect(mousePos.left - size, mousePos.top - size, size, size)
         }
     }
 
@@ -39,6 +40,15 @@ function Canvas({canvasRef}){
 
     function handleTool(tool){
         setTool(tool)
+    }
+
+    function handleSize(e){
+        if (e.target.textContent === 'Size+'){
+            setSize(()=>size+10)
+        }
+        else if (e.target.textContent === 'Size-'){
+            setSize(()=>size-10)
+        }
     }
 
     return(
@@ -52,6 +62,8 @@ function Canvas({canvasRef}){
                         <img src={eraser}></img>
                     </button>
                     <button onClick={clearCanvas}>🗑️</button>
+                    <button onClick={handleSize}>Size+</button>
+                    <button onClick={handleSize}>Size-</button>
                 </div>
             </div>
         </>

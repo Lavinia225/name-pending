@@ -17,7 +17,7 @@ function NewEntity({editingMob}){
 
     function handleSubmit(e){
         e.preventDefault()
-        const fullData = {...formData, sprite: canvasRef.current.toDataURL()} //Remember to later put a POST request in here
+        const fullData = {...formData, sprite: canvasRef.current.toDataURL()}
         let link = process.env.REACT_APP_API_URL
 
         if (editingMob){
