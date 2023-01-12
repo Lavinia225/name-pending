@@ -44,10 +44,10 @@ function Canvas({canvasRef}){
 
     function handleSize(e){
         if (e.target.textContent === 'Size+'){
-            setSize(()=>size+10)
+            setSize(()=>size+5)
         }
         else if (e.target.textContent === 'Size-'){
-            setSize(()=>size-10)
+            setSize(()=>size-5)
         }
     }
 
