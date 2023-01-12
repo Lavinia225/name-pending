@@ -35,6 +35,13 @@ function NewEntity({editingMob}){
             },
             body: JSON.stringify(fullData)
         })
+        .then(()=>{
+            setFormData({
+                name: '',
+                hp: 0
+            })
+            canvasRef.current.getContext('2d').clearRect(0, 0, 200, 200)
+        })
     }
     
 

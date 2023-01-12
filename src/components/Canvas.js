@@ -54,7 +54,7 @@ function Canvas({canvasRef}){
     return(
         <>
             <div className='drawing'>
-                <canvas onMouseMove={handleMouse} ref={canvasRef} className="canvas" height='200px' width='200px' onClick={handleClick}></canvas>
+                <canvas ref={canvasRef} className="canvas" height='200px' width='200px' onClick={handleClick} onMouseMove={handleMouse}></canvas>
                 <SketchPicker disableAlpha={true} className="color-picker" color={fillStyle.hex} onChange={updateColor}/>
                 <div className='canvas-buttons'>
                     <button onClick={()=>handleTool('pencil')}>✏️</button>
