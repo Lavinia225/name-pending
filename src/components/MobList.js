@@ -2,7 +2,7 @@ import React from 'react'
 import {NavLink, Route} from 'react-router-dom'
 import NewEntity from './NewEntity'
 
-function MobList(){
+function MobList({mobs}){
     return(
         <div id='list'>
             <NavLink to='/dev/mobs/new'>New Mob</NavLink>

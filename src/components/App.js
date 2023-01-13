@@ -29,7 +29,7 @@ function App() {
           <Game />
         </Route>
         <Route path='/dev'>
-          <DevMode />
+          <DevMode mobs={mobs} players={players}/>
         </Route>
       </Switch>
     </div>
