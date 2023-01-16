@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Card, Image} from 'semantic-ui-react'
 import {useHistory} from 'react-router-dom'
+import EditForm from './EditForm'
 
 function Player({player}){
     const [editing, setEditing] = useState(false)
@@ -28,7 +29,7 @@ function Player({player}){
 
     return(
         <>
-        {editing ? null : cardPrinter()}
+        {editing ? <EditForm entity={player}/> : cardPrinter()}
         </>
     )
 }
