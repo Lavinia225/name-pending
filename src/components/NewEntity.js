@@ -60,8 +60,10 @@ function NewEntity({editingMob}){
                 <>
                 <label htmlFor='AI'>AI: </label>
                 <select name='ai' onChange={handleChange}>
-                    <option>Default</option> {/*Remember to add these once AI is created */}
-                    <option>Default 2</option>
+                    <option>Left and Right</option>
+                    <option>Short Circular</option>
+                    <option>Long Circular</option>
+                    <option>Zig-Zag</option>
                 </select>
                 </> : null}
                 <button type='submit'>Submit</button>
