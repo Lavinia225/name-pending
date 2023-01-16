@@ -40,3 +40,7 @@
 #new-entity {
     display: flex;
 }
+
+#player-card {
+    border: 5px solid black;
+}

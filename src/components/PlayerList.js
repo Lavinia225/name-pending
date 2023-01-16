@@ -10,7 +10,7 @@ function PlayerList({players}){
             <Route path='/dev/players/new'>
                 <NewEntity editingMob={false}/>
             </Route>
-            {players ? players.map(player => <Player player={player} />) : <p>Loading...</p>}
+            {players ? players.map(player => <Player key={player.id} player={player} />) : <p>Loading...</p>}
         </div>
     )
 }

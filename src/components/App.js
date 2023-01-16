@@ -20,6 +20,11 @@ function App() {
     .then(res => res.json())
     .then(mobData => setMobs(mobData))
   }, [])
+
+  const cardStyle = document.createElement('link')
+  cardStyle.rel = 'stylesheet'
+  cardStyle.href = 'https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css'
+  document.head.append(cardStyle)
   
   return (
     <div className="App">
