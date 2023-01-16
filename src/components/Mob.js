@@ -8,7 +8,7 @@ function Mob({mob}){
             <Image src={mob.sprite} />
             <Card.Content>
                 <Card.Header>{mob.name}</Card.Header>
-                <Card.Description>HP: {mob.hp}</Card.Description>
+                <Card.Description>HP: {mob.hp} AI: {mob.ai}</Card.Description>
             </Card.Content>
         </Card>
     )
