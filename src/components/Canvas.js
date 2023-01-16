@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {createContext, useState} from 'react'
 import {SketchPicker} from 'react-color'
 import eraser from '../images/eraser.png'
 
@@ -50,7 +50,7 @@ function Canvas({canvasRef}){
             setSize(()=>size-5)
         }
     }
-
+    
     return(
         <>
             <div className='drawing'>

@@ -46,7 +46,7 @@ function NewEntity({editingMob}){
     
 
     if (editingMob === true && !formData.ai){
-        formData.ai = 'Default'
+        formData.ai = 'Left and Right'
     }
 
     return(
