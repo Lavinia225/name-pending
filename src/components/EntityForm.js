@@ -1,12 +1,22 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import Canvas from './Canvas'
 
-function NewEntity({editingMob}){
+function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
     const canvasRef = useRef()
     const [formData, setFormData] = useState({
-        name: '',
-        hp: 0,
+        name: entity.name,
+        hp: entity.hp,
     })
+
+    useEffect(()=>{
+        const ctx = canvasRef.current.getContext('2d')
+        const img = new Image
+        img.src = entity.sprite
+
+        if (entity.name){
+        ctx.drawImage(img, 0, 0)
+        }
+    }, [])
 
     function handleChange(e){
         setFormData({
@@ -19,6 +29,7 @@ function NewEntity({editingMob}){
         e.preventDefault()
         const fullData = {...formData, sprite: canvasRef.current.toDataURL()}
         let link = process.env.REACT_APP_API_URL
+        let method = 'POST'
 
         if (editingMob){
             link += '/mobs'
@@ -27,8 +38,14 @@ function NewEntity({editingMob}){
             link += '/players'
         }
 
+        if(editMode){
+            method = 'PATCH'
+            fullData.id = entity.id
+            link += `/${entity.id}`
+        }
+
         fetch(link, {
-            method: 'POST',
+            method: method,
             headers: {
                 'Content-Type': "application/json",
                 'Accept': 'application/json'
@@ -73,4 +90,4 @@ function NewEntity({editingMob}){
     )
 }
 
-export default NewEntity
+export default EntityForm

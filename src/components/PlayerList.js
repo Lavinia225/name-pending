@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavLink, Route} from 'react-router-dom'
-import NewEntity from './NewEntity'
+import NewEntity from './EntityForm'
 import Player from './Player'
 
 function PlayerList({players}){
