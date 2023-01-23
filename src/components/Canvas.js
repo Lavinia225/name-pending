@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import React, {useState} from 'react'
 import {SketchPicker} from 'react-color'
 import eraser from '../images/eraser.png'
 
