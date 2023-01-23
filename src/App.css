@@ -44,3 +44,9 @@
 #player-card {
     border: 5px solid black;
 }
+
+#audio {
+        position: relative;
+        top: -60px;
+        left: 495px;
+}
