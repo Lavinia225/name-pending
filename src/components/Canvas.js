@@ -59,7 +59,7 @@ function Canvas({canvasRef}){
                 <div className='canvas-buttons'>
                     <button onClick={()=>handleTool('pencil')}>✏️</button>
                     <button onClick={()=>handleTool('eraser')}>
-                        <img src={eraser}></img>
+                        <img src={eraser} alt='Eraser'></img>
                     </button>
                     <button onClick={clearCanvas}>🗑️</button>
                     <button onClick={handleSize}>Size+</button>
