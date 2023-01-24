@@ -50,3 +50,7 @@
         top: -60px;
         left: 495px;
 }
+
+#player {
+    border: 3px dashed black;
+}
