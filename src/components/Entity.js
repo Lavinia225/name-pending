@@ -12,7 +12,9 @@ function Entity({entity, isMob = false, isGame = false}){
 
     return(
         <div>
-            {editing && !isGame? <EntityForm entity={entity} editingMob={isMob} editMode={true} />: <Card entity={entity} isMob={isMob} handleEditClick={handleEditClick}/>}
+            {editing ? <EntityForm entity={entity} editingMob={isMob} editMode={true} />
+            : !isGame ? <Card entity={entity} isMob={isMob} handleEditClick={handleEditClick}/>
+            : <img src={entity.sprite} alt='Entity Sprite'></img>}
         </div>
     )
 }

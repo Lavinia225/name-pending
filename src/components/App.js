@@ -31,7 +31,7 @@ function App() {
       <MainHeader />
       <Switch>
         <Route exact path="/game">
-          <Game />
+          <Game players={players} mobs={mobs}/>
         </Route>
         <Route path='/dev'>
           <DevMode mobs={mobs} players={players}/>
