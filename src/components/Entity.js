@@ -3,7 +3,7 @@ import EntityForm from './EntityForm'
 import Card from './Card'
 
 function Entity({entity, isMob = false}){
-    const [editing, isEditing]= useState(false)
+    const [editing, setEditing]= useState(false)
 
     function handleEditClick(){
         setEditing(true)

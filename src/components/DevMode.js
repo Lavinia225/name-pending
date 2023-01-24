@@ -2,6 +2,7 @@ import React from 'react'
 import {NavLink, Switch, Route} from 'react-router-dom'
 import PlayerList from './PlayerList'
 import MobList from './MobList'
+import EntityList from './EntityList'
 
 
 function DevMode({mobs, players}){
@@ -11,10 +12,10 @@ function DevMode({mobs, players}){
             <NavLink to='/dev/mobs' exact>Mobs</NavLink>
             <Switch>
                 <Route path='/dev/players'>
-                    <PlayerList players={players}/>
+                    <EntityList players={players}/>
                 </Route>
                 <Route path='/dev/mobs'>
-                    <MobList mobs={mobs}/>
+                    <EntityList mobs={mobs}/>
                 </Route>
             </Switch>
         </div>
