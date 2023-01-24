@@ -53,4 +53,14 @@
 
 #player {
     border: 3px dashed black;
+    height: 100px;
+    width: 100px;
+}
+
+#mob {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    height: 100px;
+    width: 100px;
 }
