@@ -1,3 +1,19 @@
+@keyframes left-and-right {
+    0% {
+        left: 300px;
+    }
+    25% {
+        left: 0px;
+    }
+    75% {
+        left: 690px;
+    }
+    100% {
+        left: 300px;
+    }
+
+}
+
 #game {
     margin: auto;
     position: relative;
@@ -63,4 +79,13 @@
     left: 300px;
     height: 100px;
     width: 100px;
+}
+
+.Left-and-Right {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    height: 100px;
+    width: 100px;
+    animation: 7s infinite left-and-right;
 }

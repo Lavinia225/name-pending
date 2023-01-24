@@ -63,7 +63,7 @@ function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
     
 
     if (editingMob === true && !formData.ai){
-        formData.ai = 'Left and Right'
+        formData.ai = 'Left-and-Right'
     }
 
     return(
@@ -77,8 +77,8 @@ function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
                 <>
                 <label htmlFor='AI'>AI: </label>
                 <select name='ai' onChange={handleChange}>
-                    <option>Left and Right</option>
-                    <option>Short Circular</option>
+                    <option>Left-and-Right</option>
+                    <option>Short-Circular</option>
                     <option>Long Circular</option>
                     <option>Zig-Zag</option>
                 </select>

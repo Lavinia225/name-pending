@@ -14,7 +14,7 @@ function Entity({entity, isMob = false, isGame = false, playerPos}){
         <div>
             {editing ? <EntityForm entity={entity} editingMob={isMob} editMode={true} />
             : !isGame ? <Card entity={entity} isMob={isMob} handleEditClick={handleEditClick}/>
-            : isMob ? <img id='mob' src={entity.sprite} alt='Mob Sprite'></img> 
+            : isMob ? <img id='mob' className={entity.ai} src={entity.sprite} alt='Mob Sprite'></img> 
             : <img id='player'style={playerPos} src={entity.sprite} alt='Player Sprite'></img>}
         </div>
     )

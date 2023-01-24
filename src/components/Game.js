@@ -18,13 +18,13 @@ function Game({players, mobs}){
     function handleKey(e){
         if(e.key === 'd' || e.key === 'ArrowRight'){
             if(parseInt(playerPos.left) <= 680){
-                setPlayerPos({...playerPos, left: `${parseInt(playerPos.left) + 10}px`})
+                setPlayerPos({...playerPos, left: `${parseInt(playerPos.left) + 15}px`})
             }
         }
 
         if(e.key === 'a' || e.key === 'ArrowLeft'){
             if(parseInt(playerPos.left) >= 10){
-                setPlayerPos({...playerPos, left: `${parseInt(playerPos.left) - 10}px`})
+                setPlayerPos({...playerPos, left: `${parseInt(playerPos.left) - 15}px`})
             }
         }
         console.log(e.key)
