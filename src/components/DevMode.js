@@ -1,7 +1,5 @@
 import React from 'react'
 import {NavLink, Switch, Route} from 'react-router-dom'
-import PlayerList from './PlayerList'
-import MobList from './MobList'
 import EntityList from './EntityList'
 
 

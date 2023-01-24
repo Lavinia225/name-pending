@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import EntityForm from './EntityForm'
 import Card from './Card'
 
-function Entity({entity, isMob = false}){
+function Entity({entity, isMob = false, isGame = false}){
     const [editing, setEditing]= useState(false)
 
     function handleEditClick(){
@@ -12,7 +12,7 @@ function Entity({entity, isMob = false}){
 
     return(
         <div>
-            {editing ? <EntityForm entity={entity} editingMob={isMob} editMode={true} />: <Card entity={entity} isMob={isMob} handleEditClick={handleEditClick}/>}
+            {editing && !isGame? <EntityForm entity={entity} editingMob={isMob} editMode={true} />: <Card entity={entity} isMob={isMob} handleEditClick={handleEditClick}/>}
         </div>
     )
 }
