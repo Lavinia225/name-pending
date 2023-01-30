@@ -79,7 +79,7 @@ function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
                 <select name='ai' onChange={handleChange}>
                     <option>Left-and-Right</option>
                     <option>Short-Circular</option>
-                    <option>Long Circular</option>
+                    <option>Long-Circular</option>
                     <option>Zig-Zag</option>
                 </select>
                 </> : null}

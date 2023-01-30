@@ -61,6 +61,15 @@
     }
 }
 
+@keyframes Short-Circular {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(365deg);
+    }
+}
+
 #game {
     margin: auto;
     position: relative;
@@ -135,6 +144,7 @@
     height: 100px;
     width: 100px;
     animation: 7s infinite Left-and-Right;
+    animation-timing-function: linear;
 }
 
 .Zig-Zag {
@@ -144,4 +154,20 @@
     height: 100px;
     width: 100px;
     animation: 8s infinite Zig-Zag;
+    animation-timing-function: linear;
+}
+
+.Short-Circular {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    height: 100px;
+    width: 100px;
+    transform-origin: 100px 150px;
+    animation: 6s infinite Short-Circular;
+    animation-timing-function: linear;
+}
+
+.Long-Circular {
+    
 }
