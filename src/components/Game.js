@@ -33,7 +33,7 @@ function Game({players, mobs}){
     return(
         <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey}>
             <Audio audioRef={audioRef}/>
-            <Entity entity={mobs[0]} isMob={true} isGame={true} />
+            <Entity entity={mobs[2]} isMob={true} isGame={true} />
             <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/> {/*Entity, isMob, isGame are the props */}
         </div>
     )

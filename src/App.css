@@ -1,4 +1,4 @@
-@keyframes left-and-right {
+@keyframes Left-and-Right {
     0% {
         left: 300px;
     }
@@ -12,6 +12,53 @@
         left: 300px;
     }
 
+}
+
+@keyframes Zig-Zag {
+    0%{
+        left: 108px;
+        top: 0px;
+    }
+    10% {
+        left: 216px;
+        top: 100px;
+    }
+    20% {
+        left: 324px;
+        top: 0px;
+    }
+    30% {
+        left: 432px;
+        top: 100px
+    }
+    40% {
+        left: 540px;
+        top: 0px;
+    }
+    50%{
+        left: 650px;
+        top: 100px;
+    }
+    60% {
+        left: 540px;
+        top: 0px;
+    }
+    70% {
+        left: 432px;
+        top: 100px;
+    }
+    80%{
+        left: 324px;
+        top: 0px;
+    }
+    90% {
+        left: 216px;
+        top: 100px;
+    }
+    100% {
+        left: 108px;
+        top: 0px;
+    }
 }
 
 #game {
@@ -84,8 +131,17 @@
 .Left-and-Right {
     position: absolute;
     top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+    animation: 7s infinite Left-and-Right;
+}
+
+.Zig-Zag {
+    position: absolute;
+    top: 0px;
     left: 300px;
     height: 100px;
     width: 100px;
-    animation: 7s infinite left-and-right;
+    animation: 8s infinite Zig-Zag;
 }
