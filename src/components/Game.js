@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import Audio from './Audio'
 import Entity from './Entity'
+import Bullet from './Bullet'
 
 function Game({players, mobs}){
     const audioRef = useRef()
@@ -9,6 +10,7 @@ function Game({players, mobs}){
         left: `300px`,
         top: `490px`
     })
+    const [fired, setFired] = useState(false)
 
     function handleClick(){
         audioRef.current.volume = 0.01 //Temporarily not .33
@@ -27,7 +29,12 @@ function Game({players, mobs}){
                 setPlayerPos({...playerPos, left: `${parseInt(playerPos.left) - 15}px`})
             }
         }
-        console.log(e.key)
+        if(e.key === ' '){
+            if (fired === false){
+                setFired(true)
+                console.log('fired')
+            }
+        }
     }
 
     return(
@@ -35,6 +42,7 @@ function Game({players, mobs}){
             <Audio audioRef={audioRef}/>
             <Entity entity={mobs[0]} isMob={true} isGame={true} />
             <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/> {/*Entity, isMob, isGame are the props */}
+            {fired ? <Bullet /> : null}
         </div>
     )
 }
