@@ -1,12 +1,10 @@
 import React from 'react'
 import bulletSprite from '../images/bullet.png'
 
-function Bullet(){
+function Bullet({playerPos}){
     return(
-        <div>
         <img src={bulletSprite}
-        style={{position: 'absolute', left: '400px', top: '400px'}} alt='boolet'></img>
-        </div>
+        style={{position: 'absolute', left: `${parseInt(playerPos.left) + 50}px`, top: '425px'}} alt='bullet'></img>
     )
 }
 

@@ -42,7 +42,7 @@ function Game({players, mobs}){
             <Audio audioRef={audioRef}/>
             <Entity entity={mobs[0]} isMob={true} isGame={true} />
             <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/> {/*Entity, isMob, isGame are the props */}
-            {fired ? <Bullet /> : null}
+            {fired ? <Bullet playerPos={playerPos}/> : null}
         </div>
     )
 }
