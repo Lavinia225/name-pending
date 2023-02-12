@@ -9,10 +9,19 @@ function Bullet({playerPos, exit}){
     const mob = document.getElementById('mob')
 
     useEffect(()=>{
-        if(parseInt(bulletPos.top) <= mob.getBoundingClientRect().y && bulletPos.left > mob.getBoundingClientRect.left && bulletPos.right < mob.getBoundingClientRect().right){
+        const mobHitbox = mob.getBoundingClientRect()
+        if(parseInt(bulletPos.top) <= mobHitbox.y && parseInt(bulletPos.left) > mobHitbox.left && parseInt(bulletPos.left) < mobHitbox.right){
+            console.warn(`TERMINATED`)
+
+            /*console.log(parseInt(bulletPos.left) < mobHitbox.right)
+            console.log('Bullet:')
+            console.table(document.getElementById('bullet').getBoundingClientRect())
+            console.log('MobBox:')
+            console.table(mobHitbox)
+            console.log(parseInt(bulletPos.top) <= mobHitbox.y)*/
             exit()
         }
-        
+
         const time = setInterval(()=>{
             setBulletPos(()=>{
                 return {left: bulletPos.left, top: `${parseInt(bulletPos.top) - 10}px`}})
@@ -24,7 +33,7 @@ function Bullet({playerPos, exit}){
     }, )
 
     return(
-        <img src={bulletSprite}
+        <img src={bulletSprite} id='bullet'
         style={{position: 'absolute', left: bulletPos.left, top: bulletPos.top}} alt='bullet'></img>
     )
 }

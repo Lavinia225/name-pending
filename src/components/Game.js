@@ -38,6 +38,7 @@ function Game({players, mobs}){
     }
 
     function handleBulletExit(){
+        console.log('Upper reached')
         setFired(false)
     }
 
