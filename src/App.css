@@ -70,6 +70,12 @@
     }
 }
 
+@keyframes Long-Circular {
+    0%{
+        
+    }
+}
+
 #game {
     margin: auto;
     position: relative;
