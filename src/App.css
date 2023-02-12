@@ -72,7 +72,36 @@
 
 @keyframes Long-Circular {
     0%{
-        
+        left: 300px;
+        top: 0px;
+    }
+    15% {
+        left: 100px;
+        top: 0px;
+    }
+    25% {
+        left: 0px;
+        top: 50px;
+    }
+    35% {
+        left: 100px;
+        top: 100px;
+    }
+    65% {
+        left: 590px;
+        top: 100px;
+    }
+    75% {
+        left: 690px;
+        top: 50px;
+    }
+    85% {
+        left: 590px;
+        top: 0px;
+    }
+    100% {
+        left: 300px;
+        top: 0px;
     }
 }
 
@@ -181,6 +210,6 @@
     height: 100px;
     width: 100px;
     transform-origin: 100px 50px;
-    animation: 6s infinite Long-Circular;
+    animation: 5s infinite Long-Circular;
     animation-timing-function: linear;
 }
