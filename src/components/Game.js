@@ -5,7 +5,6 @@ import Bullet from './Bullet'
 
 function Game({players, mobs}){
     const audioRef = useRef()
-    const mobRef = useRef()
 
     const [playerPos, setPlayerPos] = useState({
         position: 'absolute',
@@ -36,7 +35,6 @@ function Game({players, mobs}){
                 setFired(true)
             }
         }
-        console.log(mobRef)
     }
 
     function handleBulletExit(){
@@ -46,7 +44,7 @@ function Game({players, mobs}){
     return(
         <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey}>
             <Audio audioRef={audioRef}/>
-            <Entity mobRef={mobRef} entity={mobs[0]} isMob={true} isGame={true} />
+            <Entity entity={mobs[0]} isMob={true} isGame={true} />
             <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/> {/*Entity, isMob, isGame are the props */}
             {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
         </div>
