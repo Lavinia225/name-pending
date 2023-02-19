@@ -172,6 +172,10 @@
     width: 100px;
 }
 
+#bullet {
+    position: absolute;
+}
+
 .Left-and-Right {
     position: absolute;
     top: 0px;

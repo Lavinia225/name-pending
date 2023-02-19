@@ -15,8 +15,8 @@ function Game({players, mobs}){
     const [fired, setFired] = useState(false)
 
     function handleClick(){
-        audioRef.current.volume = 0.01 //Temporarily not .33
-        audioRef.current.play()
+        audioRef.current.volume = 0.33
+        //audioRef.current.play() Disabled for testing
     }
 
     function handleKey(e){
@@ -39,7 +39,6 @@ function Game({players, mobs}){
     }
 
     function handleBulletExit(){
-        console.log('Upper reached')
         setFired(false)
     }
 

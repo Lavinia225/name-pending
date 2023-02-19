@@ -10,10 +10,16 @@ function Bullet({playerPos, exit}){
 
     useEffect(()=>{
         const mobHitbox = mob.getBoundingClientRect()
+
+        if(parseInt(bulletPos.top) <= 0){
+            console.warn('Terminated via boundry.')
+            exit()
+        }
+        
         if(parseInt(bulletPos.top) <= mobHitbox.y && parseInt(bulletPos.left) > mobHitbox.left && parseInt(bulletPos.left) < mobHitbox.right){
             console.warn(`TERMINATED`)
 
-            /*console.log(parseInt(bulletPos.left) < mobHitbox.right)
+           /*console.log(parseInt(bulletPos.left) < mobHitbox.right)
             console.log('Bullet:')
             console.table(document.getElementById('bullet').getBoundingClientRect())
             console.log('MobBox:')
