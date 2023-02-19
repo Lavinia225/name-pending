@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import {Redirect} from 'react-router-dom'
 import Audio from './Audio'
 import Entity from './Entity'
 import Bullet from './Bullet'
@@ -40,6 +41,10 @@ function Game({players, mobs}){
     function handleBulletExit(){
         console.log('Upper reached')
         setFired(false)
+    }
+
+    if(players === undefined && mobs === undefined){
+        return (<Redirect to='' />)
     }
 
     return(

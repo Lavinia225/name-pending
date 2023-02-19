@@ -1,11 +1,13 @@
 import React from 'react'
-import {NavLink, Route} from 'react-router-dom'
+import {NavLink, Route, Redirect} from 'react-router-dom'
 import EntityForm from './EntityForm'
 import Entity from './Entity'
 
 function EntityList({players, mobs}){
-    console.log('Players', players)
-    console.log('Mobs', mobs)
+    if(players === undefined && mobs === undefined){
+        return (<Redirect to='' />)
+    }
+    
     return(
         <div id='list'>
             <NavLink to={`/dev/${players ? 'players' : 'mobs'}/new`}>New {players ? 'Player' : 'Mob'}</NavLink>
