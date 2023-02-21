@@ -4,11 +4,10 @@ import EntityForm from './EntityForm'
 import Entity from './Entity'
 
 function EntityList({players, mobs}){
-    /*if(players === undefined && mobs === undefined){
-        return (<Redirect to='' />)
-    }*/ //Change this to checking if data is loading
+    if(players === undefined && mobs === undefined){
+        return (<h1>Loading...</h1>)
+    }
 
-    console.log(players)
     
     return(
         <div id='list'>
