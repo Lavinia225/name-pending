@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import Canvas from './Canvas'
 
 function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
@@ -7,6 +8,7 @@ function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
         name: entity.name,
         hp: entity.hp,
     })
+    const history = useHistory()
 
     useEffect(()=>{
         const ctx = canvasRef.current.getContext('2d')
@@ -53,11 +55,8 @@ function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
             body: JSON.stringify(fullData)
         })
         .then(()=>{
-            setFormData({
-                name: '',
-                hp: 0
-            })
-            canvasRef.current.getContext('2d').clearRect(0, 0, 200, 200)
+            console.log('success on edit')
+            history.push(`/dev/${editingMob ? 'mobs' : 'players'}`)
         })
     }
     
