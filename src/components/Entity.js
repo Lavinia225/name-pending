@@ -6,13 +6,12 @@ function Entity({entity, isMob = false, isGame = false, playerPos}){
     const [editing, setEditing]= useState(false)
 
     function handleEditClick(){
-        setEditing(true)
-        //history.push(`/dev/players/${player.id}`)
+        setEditing(!editing)
     }
 
     return(
         <div>
-            {editing ? <EntityForm entity={entity} editingMob={isMob} editMode={true} />
+            {editing ? <EntityForm entity={entity} editingMob={isMob} editMode={true} handleEditSubmit={handleEditClick}/>
             : !isGame ? <Card entity={entity} isMob={isMob} handleEditClick={handleEditClick}/>
             : isMob ? <img id='mob' className={entity.ai} src={entity.sprite} alt='Mob Sprite'></img> 
             : <img id='player'style={playerPos} src={entity.sprite} alt='Player Sprite'></img>}

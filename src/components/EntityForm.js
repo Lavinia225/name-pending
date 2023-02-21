@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import Canvas from './Canvas'
 
-function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
+function EntityForm({editingMob, handleEditSubmit, entity = {name: '', hp: 0}, editMode = false}){
     const canvasRef = useRef()
     const [formData, setFormData] = useState({
         name: entity.name,
@@ -56,6 +56,9 @@ function EntityForm({editingMob, entity = {name: '', hp: 0}, editMode = false}){
         })
         .then(()=>{
             console.log('success on edit')
+            if(editMode){
+                handleEditSubmit()
+            }
             history.push(`/dev/${editingMob ? 'mobs' : 'players'}`)
         })
     }
