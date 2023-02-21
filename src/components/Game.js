@@ -3,10 +3,10 @@ import {Redirect} from 'react-router-dom'
 import Audio from './Audio'
 import Entity from './Entity'
 import Bullet from './Bullet'
+import bg from '../images/For_Luna_Sketch.png'
 
 function Game({players, mobs}){
     const audioRef = useRef()
-
     const [playerPos, setPlayerPos] = useState({
         position: 'absolute',
         left: `300px`,
@@ -42,12 +42,12 @@ function Game({players, mobs}){
         setFired(false)
     }
 
-    if(players === undefined && mobs === undefined){
-        return (<Redirect to='' />)
+    if(players === undefined || mobs === undefined){
+        return (<h1>Loading...</h1>)
     }
 
     return(
-        <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey}>
+        <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
             <Audio audioRef={audioRef}/>
             <Entity entity={mobs[0]} isMob={true} isGame={true} />
             <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/> {/*Entity, isMob, isGame are the props */}
