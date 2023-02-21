@@ -55,7 +55,6 @@ function EntityForm({editingMob, handleEditSubmit, entity = {name: '', hp: 0}, e
             body: JSON.stringify(fullData)
         })
         .then(()=>{
-            console.log('success on edit')
             if(editMode){
                 handleEditSubmit()
             }

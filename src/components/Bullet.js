@@ -13,20 +13,27 @@ function Bullet({playerPos, exit}){
     useEffect(()=>{
         const mobHitbox = mob.getBoundingClientRect()
 
-            //bottom of bullet must be less than y or 'top' of mob. Implement bottom.
+            //bottom of bullet must be greater than y or 'top' of mob. Implement bottom.
             //Right of bullet must be greater than left of mob.
             //Left of bullet must be less than right of mob.
-        if(parseInt(bulletPos.bottom) <= mobHitbox.top && parseInt(bulletPos.right) > mobHitbox.left && parseInt(bulletPos.left) < mobHitbox.right){
+            //Top of bullet must be greater than bottom of mob.
+
+        if(parseInt(bulletPos.bottom) >= mobHitbox.top &&
+           parseInt(bulletPos.right) > mobHitbox.left &&
+           parseInt(bulletPos.left) < mobHitbox.right &&
+           parseInt(bulletPos.top) <= mobHitbox.bottom){
             console.warn(`TERMINATED`)
-        
-            /*console.log(mobHitbox)
-            console.log('Bullet top', parseInt(bulletPos.top))
-            console.log('Bullet left', parseInt(bulletPos.left))
-            console.log('Mob y', mobHitbox.y)
-            console.log('Mob left', mobHitbox.left)
-            console.log('Mob right', mobHitbox.right)
-            console.table(document.getElementById('bullet').getBoundingClientRect())*/
-            exit()
+            console.log('parseInt(bulletPos.bottom) >= mobHitbox.top',parseInt(bulletPos.bottom) >= mobHitbox.top)
+            console.log('parseInt(bulletPos.right) > mobHitbox.left', parseInt(bulletPos.right) > mobHitbox.left)
+            console.log('parseInt(bulletPos.left) < mobHitbox.right',parseInt(bulletPos.left) < mobHitbox.right)
+            console.log('parseInt(bulletPos.top) <= mobHitbox.bottom', parseInt(bulletPos.top) <= mobHitbox.bottom)
+            
+            console.log('bullet')
+            console.table(bulletPos)
+            console.log('\nmob')
+            console.table(mobHitbox)
+            debugger
+            //exit()
         }
 
         if(parseInt(bulletPos.top) <= 0){
