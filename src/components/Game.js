@@ -1,5 +1,4 @@
 import React, {useRef, useState} from 'react'
-import {Redirect} from 'react-router-dom'
 import Audio from './Audio'
 import Entity from './Entity'
 import Bullet from './Bullet'
@@ -16,7 +15,6 @@ function Game({players, mobs}){
 
     function handleClick(){
         audioRef.current.volume = 0.33
-        //audioRef.current.play() Disabled for testing
     }
 
     function handleKey(e){

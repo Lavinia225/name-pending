@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink, Route, Redirect} from 'react-router-dom'
+import {NavLink, Route} from 'react-router-dom'
 import EntityForm from './EntityForm'
 import Entity from './Entity'
 
