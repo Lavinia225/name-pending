@@ -48,7 +48,7 @@ function Game({players, mobs}){
         <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
             <Audio audioRef={audioRef}/>
             <Entity entity={mobs[0]} isMob={true} isGame={true} />
-            <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/> {/*Entity, isMob, isGame are the props */}
+            <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/>
             {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
         </div>
     )
