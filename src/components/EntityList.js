@@ -11,7 +11,9 @@ function EntityList({players, mobs}){
     
     return(
         <div id='list'>
+            <nav>
             <NavLink to={`/dev/${players ? 'players' : 'mobs'}/new`}>New {players ? 'Player' : 'Mob'}</NavLink>
+            </nav>
                 <Route path={`/dev/${players ? 'players' : 'mobs'}/new`}>
                     <EntityForm editingMob={mobs ? true : false}/>
                 </Route>
