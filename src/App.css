@@ -104,12 +104,22 @@
         top: 0px;
     }
 }
+#body {
+    background: #E6E6FA;
+}
+
 nav {
     text-align: center;
 }
+nav a {
+    padding-right:10px;
+    font-size: 20px;
+}
+
 nav a:active, a:hover{
     background-color: yellow;
 }
+
 #game {
     margin: auto;
     position: relative;
@@ -153,9 +163,13 @@ nav a:active, a:hover{
 
 #new-entity {
     display: flex;
+    margin: auto;
+    max-width: 50%;
 }
 
-#player-card {
+#card {
+    margin: auto;
+    max-width: 50%;
     border: 5px solid black;
 }
 

@@ -24,6 +24,7 @@ function App() {
   const cardStyle = document.createElement('link')
   cardStyle.rel = 'stylesheet'
   cardStyle.href = 'https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css'
+  document.querySelector('body').id = 'body'
   document.head.append(cardStyle)
   
   return (
