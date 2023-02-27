@@ -104,7 +104,12 @@
         top: 0px;
     }
 }
-
+nav {
+    text-align: center;
+}
+nav a:active, a:hover{
+    background-color: yellow;
+}
 #game {
     margin: auto;
     position: relative;
