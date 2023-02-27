@@ -47,8 +47,8 @@ function Game({players, mobs}){
     return(
         <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
             <Audio audioRef={audioRef}/>
-            <Entity entity={mobs[0]} isMob={true} isGame={true} />
-            <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/>
+            <Entity entity={mobs[Math.floor(Math.random() * mobs.length)]} isMob={true} isGame={true} />
+            <Entity playerPos={playerPos} entity={players[Math.floor(Math.random() * players.length)]} isMob={false} isGame={true}/>
             {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
         </div>
     )
