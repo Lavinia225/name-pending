@@ -10,7 +10,7 @@ function Card({entity, isMob, handleEditClick}){
                     <Cardy.Description>HP: {entity.hp} {isMob ? `AI: ${entity.ai}` : null}</Cardy.Description>
                 </Cardy.Content>
                 <Cardy.Content extra>
-                    <a onClick={handleEditClick}>✏️ Edit</a>
+                    <a onClick={()=>handleEditClick(entity.id)}>✏️ Edit</a>
                 </Cardy.Content>
             </Cardy>
     )
