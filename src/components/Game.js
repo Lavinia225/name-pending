@@ -42,20 +42,28 @@ function Game({players, mobs}){
     function handleSelect(id){
         setActivePlayer(id)
     }
+    
+    function handleReselect(){
+        setActivePlayer(null)
+    }
 
     if(players === undefined || mobs === undefined){
         return (<h1>Loading...</h1>)
     }
 
     return(<>
-    {activePlayer ? <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
-            <Audio audioRef={audioRef}/>
-            <Entity entity={mobs[0]} isMob={true} isGame={true} />
-            <Entity playerPos={playerPos} entity={players[activePlayer-1]} isMob={false} isGame={true}/>
-            {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
-        </div> : <PlayerSelect players={players} handleSelect={handleSelect}/>}
+    {activePlayer ? 
+        <>
+            <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
+            <button id='player-select' onClick={handleReselect}>Select New Player</button>
+                <Audio audioRef={audioRef}/>
+                <Entity entity={mobs[0]} isMob={true} isGame={true} />
+                <Entity playerPos={playerPos} entity={players[activePlayer-1]} isMob={false} isGame={true}/>
+                {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
+            </div> 
+        </>
+        : <PlayerSelect players={players} handleSelect={handleSelect}/>}
         </>
     )
 }
-
 export default Game

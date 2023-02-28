@@ -176,7 +176,7 @@ nav a:active, a:hover{
 #audio {
         position: relative;
         top: -60px;
-        left: 495px;
+        left: 400px;
 }
 
 #player {
@@ -196,6 +196,12 @@ nav a:active, a:hover{
 
 #bullet {
     position: absolute;
+}
+
+#player-select{
+    position:relative;
+    bottom: 65px;
+    left: 335px;
 }
 
 .Left-and-Right {
