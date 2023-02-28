@@ -38,16 +38,17 @@ function Game({players, mobs}){
 
     function handleBulletExit(hit){
         setFired(false)
+        
         if(hit){
             setMobHP(()=>mobHP - 1)
-            if(mobHP <= 0){
+            if(mobHP - 1 <= 0){
                 if(activeMob === mobs.length - 1){
                     setActiveMob(0)
                     setMobHP(mobs[0].hp)
                 }
                 else{
                     setActiveMob(()=>activeMob + 1)
-                    setMobHP(()=>mobs[activeMob].hp)
+                    setMobHP(()=>mobs[activeMob + 1].hp)
                 }
 
             }
