@@ -3,7 +3,7 @@ import {Card as Cardy, Image} from 'semantic-ui-react'
 
 function Card({entity, isMob, selecting = false, handleEditClick = null, handleSelect = null}){
     return(
-        <Cardy id={isMob ? 'mob-card' : 'player-card'}>
+        <Cardy id={'card'}>
                 <Image src={entity.sprite} />
                 <Cardy.Content>
                     <Cardy.Header>{entity.name}</Cardy.Header>

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import PlayerSelect from './PlayerSelect'
 import Audio from './Audio'
 import Entity from './Entity'
@@ -15,7 +15,7 @@ function Game({players, mobs}){
     const [fired, setFired] = useState(false)
     const [activePlayer, setActivePlayer] = useState(null)
     const [activeMob, setActiveMob] = useState(0)
-    const [mobHP, setMobHP] = useState(mobs[activeMob].hp)
+    const [mobHP, setMobHP] = useState(1)
 
     function handleKey(e){
         if(e.key === 'd' || e.key === 'ArrowRight'){
@@ -70,7 +70,7 @@ function Game({players, mobs}){
     {activePlayer ? 
         <>
             <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
-            <button id='player-select' onClick={handleReselect}>Select New Player</button>
+            <button id='player-select-button' onClick={handleReselect}>Select New Player</button>
                 <Audio audioRef={audioRef}/>
                 <Entity entity={mobs[activeMob]} isMob={true} isGame={true} />
                 <Entity playerPos={playerPos} entity={players[activePlayer-1]} isMob={false} isGame={true}/>

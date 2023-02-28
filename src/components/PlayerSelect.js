@@ -4,7 +4,7 @@ import Card from './Card'
 function PlayerSelect({players, handleSelect}){
 
     return(
-        <div>
+        <div id={'player-select'}>
             <h2>Select Player.</h2>
             {players.map(player => <Card key={player.id} entity={player} isMob={false} selecting={true} handleSelect={handleSelect}/>)}
         </div>
