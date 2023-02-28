@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import PlayerSelect from './PlayerSelect'
 import Audio from './Audio'
 import Entity from './Entity'
 import Bullet from './Bullet'
@@ -12,6 +13,8 @@ function Game({players, mobs}){
         top: `490px`
     })
     const [fired, setFired] = useState(false)
+    const [activePlayer, setActivePlayer] = useState(null)
+    //const [activeMob, setActiveMob] = useState(null)
 
     function handleKey(e){
         if(e.key === 'd' || e.key === 'ArrowRight'){
@@ -36,17 +39,22 @@ function Game({players, mobs}){
         setFired(false)
     }
 
+    function handleSelect(id){
+        setActivePlayer(id)
+    }
+
     if(players === undefined || mobs === undefined){
         return (<h1>Loading...</h1>)
     }
 
-    return(
-        <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
+    return(<>
+    {activePlayer ? <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
             <Audio audioRef={audioRef}/>
             <Entity entity={mobs[0]} isMob={true} isGame={true} />
-            <Entity playerPos={playerPos} entity={players[2]} isMob={false} isGame={true}/>
+            <Entity playerPos={playerPos} entity={players[activePlayer-1]} isMob={false} isGame={true}/>
             {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
-        </div>
+        </div> : <PlayerSelect players={players} handleSelect={handleSelect}/>}
+        </>
     )
 }
 
