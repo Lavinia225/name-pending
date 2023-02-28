@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
-import {NavLink, Route} from 'react-router-dom'
+import {NavLink, Route, useHistory} from 'react-router-dom'
 import EntityForm from './EntityForm'
 import Entity from './Entity'
 
 function EntityList({players, mobs}){
     const [editing, setEditing] = useState(0)
+    const history = useHistory()
 
     if(players === undefined && mobs === undefined){
         return (<h1>Loading...</h1>)
@@ -12,7 +13,9 @@ function EntityList({players, mobs}){
 
     function handleEdit(id){
         setEditing(id)
+        history.push(`/dev/${mobs ? 'mobs' : 'players'}/edit/:${id}`)
     }
+    
     
     return(
         <div id='list'>
