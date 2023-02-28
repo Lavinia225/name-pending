@@ -14,7 +14,8 @@ function Game({players, mobs}){
     })
     const [fired, setFired] = useState(false)
     const [activePlayer, setActivePlayer] = useState(null)
-    //const [activeMob, setActiveMob] = useState(null)
+    const [activeMob, setActiveMob] = useState(0)
+    const [mobHP, setMobHP] = useState(mobs[activeMob].hp)
 
     function handleKey(e){
         if(e.key === 'd' || e.key === 'ArrowRight'){
@@ -35,8 +36,22 @@ function Game({players, mobs}){
         }
     }
 
-    function handleBulletExit(){
+    function handleBulletExit(hit){
         setFired(false)
+        if(hit){
+            setMobHP(()=>mobHP - 1)
+            if(mobHP <= 0){
+                if(activeMob === mobs.length - 1){
+                    setActiveMob(0)
+                    setMobHP(mobs[0].hp)
+                }
+                else{
+                    setActiveMob(()=>activeMob + 1)
+                    setMobHP(()=>mobs[activeMob].hp)
+                }
+
+            }
+        }
     }
 
     function handleSelect(id){
@@ -57,7 +72,7 @@ function Game({players, mobs}){
             <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
             <button id='player-select' onClick={handleReselect}>Select New Player</button>
                 <Audio audioRef={audioRef}/>
-                <Entity entity={mobs[0]} isMob={true} isGame={true} />
+                <Entity entity={mobs[activeMob]} isMob={true} isGame={true} />
                 <Entity playerPos={playerPos} entity={players[activePlayer-1]} isMob={false} isGame={true}/>
                 {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
             </div> 

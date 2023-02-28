@@ -23,7 +23,7 @@ function Bullet({playerPos, exit}){
            parseInt(bulletPos.left) < mobHitbox.right &&
            parseInt(bulletPos.top) <= mobHitbox.bottom){
             console.warn(`TERMINATED`)
-            console.log('parseInt(bulletPos.bottom) >= mobHitbox.top',parseInt(bulletPos.bottom) >= mobHitbox.top)
+            /*console.log('parseInt(bulletPos.bottom) >= mobHitbox.top',parseInt(bulletPos.bottom) >= mobHitbox.top)
             console.log('parseInt(bulletPos.right) > mobHitbox.left', parseInt(bulletPos.right) > mobHitbox.left)
             console.log('parseInt(bulletPos.left) < mobHitbox.right',parseInt(bulletPos.left) < mobHitbox.right)
             console.log('parseInt(bulletPos.top) <= mobHitbox.bottom', parseInt(bulletPos.top) <= mobHitbox.bottom)
@@ -31,18 +31,17 @@ function Bullet({playerPos, exit}){
             console.log('bullet')
             console.table(bulletPos)
             console.log('\nmob')
-            console.table(mobHitbox)
-            debugger
-            //exit()
+            console.table(mobHitbox)*/
+            exit(true)
         }
 
         if(parseInt(bulletPos.top) <= 0){
-            console.warn('Terminated via boundry.')
+            /*console.warn('Terminated via boundry.')
             console.log('bullet')
             console.table(bulletPos)
             console.log('\nmob')
-            console.table(mobHitbox)
-            exit()
+            console.table(mobHitbox)*/
+            exit(false)
         }
 
         const time = setInterval(()=>{
