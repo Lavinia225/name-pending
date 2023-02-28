@@ -4,26 +4,21 @@ import bulletSprite from '../images/bullet.png'
 function Bullet({playerPos, exit}){
     const [bulletPos, setBulletPos] = useState({
         left: `${parseInt(playerPos.left) + 50}px`,
-        right: `${parseInt(playerPos.left) + 54}px`,
         top: '425px',
-        bottom: '490px'
     })
-    const mob = document.getElementById('mob')
 
     useEffect(()=>{
-        const mobHitbox = mob.getBoundingClientRect()
+        const mobHitbox = document.getElementById('mob').getBoundingClientRect()
         const bulletHitbox = document.getElementById('bullet').getBoundingClientRect()
 
         if(parseInt(bulletHitbox.bottom) >= mobHitbox.top &&
            parseInt(bulletHitbox.right) > mobHitbox.left &&
            parseInt(bulletHitbox.left) < mobHitbox.right &&
            parseInt(bulletHitbox.top) <= mobHitbox.bottom){
-            console.warn(`TERMINATED`)
             exit(true)
         }
 
         if(parseInt(bulletPos.top) <= 0){
-            console.warn('Terminated via boundry.')
             exit(false)
         }
 
@@ -31,9 +26,7 @@ function Bullet({playerPos, exit}){
             setBulletPos(()=>{
                 return {
                     left: bulletPos.left,
-                    right: bulletPos.right,
                     top: `${parseInt(bulletPos.top) - 10}px`,
-                    bottom: `${parseInt(bulletPos.bottom) - 10}px`
                 }})
             }, 10)
 
