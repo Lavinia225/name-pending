@@ -13,10 +13,6 @@ function Game({players, mobs}){
     })
     const [fired, setFired] = useState(false)
 
-    function handleClick(){
-        audioRef.current.volume = 0.33
-    }
-
     function handleKey(e){
         if(e.key === 'd' || e.key === 'ArrowRight'){
             if(parseInt(playerPos.left) <= 680){
@@ -45,8 +41,8 @@ function Game({players, mobs}){
     }
 
     return(
-        <div id='game' onClick={handleClick} tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
-            <Audio audioRef={audioRef} disabled/> {/*Temp disabled*/}
+        <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
+            <Audio audioRef={audioRef}/>
             <Entity entity={mobs[Math.floor(Math.random() * mobs.length)]} isMob={true} isGame={true} />
             <Entity playerPos={playerPos} entity={players[Math.floor(Math.random() * players.length)]} isMob={false} isGame={true}/>
             {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
