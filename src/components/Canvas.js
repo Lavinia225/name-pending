@@ -13,8 +13,8 @@ function Canvas({canvasRef}){
 
     function handleMouse(e){
         setMousePos({
-            left: e.pageX - canvasRef.current.getBoundingClientRect().x,
-            top: e.pageY - canvasRef.current.getBoundingClientRect().y
+            left: e.nativeEvent.offsetX,
+            top: e.nativeEvent.offsetY
         })
     }
 
@@ -27,10 +27,10 @@ function Canvas({canvasRef}){
 
         if (tool === 'pencil'){
             ctx.fillStyle = fillStyle.hex
-            ctx.fillRect(mousePos.left - size, mousePos.top - size, size, size)
+            ctx.fillRect(mousePos.left - size / 2, mousePos.top - size / 2, size, size)
         }
         else{
-            ctx.clearRect(mousePos.left - size, mousePos.top - size, size, size)
+            ctx.clearRect(mousePos.left - size / 2, mousePos.top - size / 2, size, size)
         }
     }
 
