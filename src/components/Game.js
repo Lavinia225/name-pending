@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import PlayerSelect from './PlayerSelect'
 import Audio from './Audio'
 import Entity from './Entity'

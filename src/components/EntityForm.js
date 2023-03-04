@@ -12,7 +12,7 @@ function EntityForm({editingMob, handleEditSubmit, updateEntities, entity = {nam
 
     useEffect(()=>{
         const ctx = canvasRef.current.getContext('2d')
-        const img = new Image
+        const img = new Image()
         img.src = entity.sprite
 
         if (entity.name){
