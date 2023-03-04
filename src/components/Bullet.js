@@ -4,7 +4,7 @@ import bulletSprite from '../images/bullet.png'
 function Bullet({playerPos, exit}){
     const [bulletPos, setBulletPos] = useState({
         left: `${parseInt(playerPos.left) + 50}px`,
-        top: '425px',
+        top: '625px',
     })
 
     useEffect(()=>{

@@ -13,7 +13,7 @@ function EntityList({players, mobs}){
 
     function handleEdit(id){
         setEditing(id)
-        history.push(`/dev/${mobs ? 'mobs' : 'players'}/edit/:${id}`)
+        history.push(`/dev/${mobs ? 'mobs' : 'players'}/:${id}/edit`)
     }
     
     

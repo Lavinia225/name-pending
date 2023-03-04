@@ -10,7 +10,7 @@ function Game({players, mobs}){
     const [playerPos, setPlayerPos] = useState({
         position: 'absolute',
         left: `300px`,
-        top: `490px`
+        top: `690px`
     })
     const [fired, setFired] = useState(false)
     const [activePlayer, setActivePlayer] = useState(null)
@@ -71,6 +71,7 @@ function Game({players, mobs}){
     {activePlayer ? 
         <>
             <div id='game' tabIndex={0} onKeyDown={handleKey} style={{backgroundImage: `url(${bg})`}}>
+            <h1>Enemy HP: {mobHP}</h1>
             <button id='player-select-button' onClick={handleReselect}>Select New Player</button>
                 <Audio audioRef={audioRef}/>
                 <Entity entity={mobs[activeMob]} isMob={true} isGame={true} />
