@@ -3,7 +3,7 @@ import {NavLink, Route, useHistory} from 'react-router-dom'
 import EntityForm from './EntityForm'
 import Entity from './Entity'
 
-function EntityList({players, mobs}){
+function EntityList({players, mobs, updateEntities}){
     const [editing, setEditing] = useState(0)
     const history = useHistory()
 
@@ -23,10 +23,10 @@ function EntityList({players, mobs}){
             <NavLink to={`/dev/${players ? 'players' : 'mobs'}/new`}>New {players ? 'Player' : 'Mob'}</NavLink>
             </nav>
                 <Route path={`/dev/${players ? 'players' : 'mobs'}/new`}>
-                    <EntityForm editingMob={mobs ? true : false}/>
+                    <EntityForm editingMob={mobs ? true : false} updateEntities={updateEntities}/>
                 </Route>
-            {players ? players.map(player => <Entity key={player.id} entity={player} editing={player.id === editing ? true : false} handleEditClick={handleEdit}/>) 
-            : mobs.map(mob => <Entity key={mob.id} entity={mob} isMob={true}  editing={mob.id === editing ? true :false} handleEditClick={handleEdit}/>)}
+            {players ? players.map(player => <Entity key={player.id} entity={player} editing={player.id === editing ? true : false} handleEditClick={handleEdit} updateEntities={updateEntities}/>) 
+            : mobs.map(mob => <Entity key={mob.id} entity={mob} isMob={true}  editing={mob.id === editing ? true :false} handleEditClick={handleEdit} updateEntities={updateEntities}/>)}
         </div>
     )
 }

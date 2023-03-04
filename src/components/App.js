@@ -26,6 +26,34 @@ function App() {
   cardStyle.href = 'https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css'
   document.querySelector('body').id = 'body'
   document.head.append(cardStyle)
+
+  function updateEntities(entity, isMob, updating){
+    if (updating){
+      if (isMob){
+        setMobs(mobs.map(entityChecker))
+      }
+      else{
+        setPlayers(players.map(entityChecker))
+      }
+    }
+    else{
+      if (isMob){
+        setMobs([...mobs, entity])
+      }
+      else{
+        setPlayers([...players, entity])
+      }
+    }
+
+    function entityChecker(old){
+      if(old.id === entity.id){
+        return entity
+      }
+      else{
+        return old
+      }
+    }
+    }
   
   return (
     <div className="App">
@@ -35,7 +63,7 @@ function App() {
           <Game players={players} mobs={mobs}/>
         </Route>
         <Route path='/dev'>
-          <DevMode mobs={mobs} players={players}/>
+          <DevMode mobs={mobs} players={players} updateEntities={updateEntities}/>
         </Route>
       </Switch>
     </div>

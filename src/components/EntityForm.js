@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import Canvas from './Canvas'
 
-function EntityForm({editingMob, handleEditSubmit, entity = {name: '', hp: 0}, editMode = false}){
+function EntityForm({editingMob, handleEditSubmit, updateEntities, entity = {name: '', hp: 0}, editMode = false}){
     const canvasRef = useRef()
     const [formData, setFormData] = useState({
         name: entity.name,
@@ -54,10 +54,12 @@ function EntityForm({editingMob, handleEditSubmit, entity = {name: '', hp: 0}, e
             },
             body: JSON.stringify(fullData)
         })
-        .then(()=>{
+        .then(res => res.json())
+        .then(entity=>{
             if(editMode){
                 handleEditSubmit()
             }
+            updateEntities(entity, editingMob, editMode)
             history.push(`/dev/${editingMob ? 'mobs' : 'players'}`)
         })
     }

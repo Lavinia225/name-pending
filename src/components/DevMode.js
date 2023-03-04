@@ -3,7 +3,7 @@ import {NavLink, Switch, Route} from 'react-router-dom'
 import EntityList from './EntityList'
 
 
-function DevMode({mobs, players}){
+function DevMode({mobs, players, updateEntities}){
     return(
         <div id="dev">
             <nav>
@@ -12,10 +12,10 @@ function DevMode({mobs, players}){
             </nav>
             <Switch>
                 <Route path='/dev/players'>
-                    <EntityList players={players}/>
+                    <EntityList players={players} updateEntities={updateEntities}/>
                 </Route>
                 <Route path='/dev/mobs'>
-                    <EntityList mobs={mobs}/>
+                    <EntityList mobs={mobs} updateEntities={updateEntities}/>
                 </Route>
             </Switch>
         </div>
