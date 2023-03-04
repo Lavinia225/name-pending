@@ -66,7 +66,7 @@ function EntityForm({editingMob, handleEditSubmit, updateEntities, entity = {nam
     
 
     if (editingMob === true && !formData.ai){
-        formData.ai = 'Left-and-Right'
+        setFormData({...formData, ai: 'Left-and-Right'})
     }
 
     return(
