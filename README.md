@@ -33,9 +33,9 @@ Game Background by my good presently anonymous friend
 
 ### Songs
 
-Angel Eyes, Legends, and Leave the World Tonight by [Kim Lightyear](https://pixabay.com/users/lightyeartraxx-26697863/)
-Man is he Mega by [Geoffrey Burch](https://pixabay.com/users/geoffreyburch-5739114/)
-DNX by [DSTechnician](https://pixabay.com/users/dstechnician-26430546/)
+*   Angel Eyes, Legends, and Leave the World Tonight by [Kim Lightyear](https://pixabay.com/users/lightyeartraxx-26697863/)
+*   Man is he Mega by [Geoffrey Burch](https://pixabay.com/users/geoffreyburch-5739114/)
+*   DNX by [DSTechnician](https://pixabay.com/users/dstechnician-26430546/)
 
 ## License
 
