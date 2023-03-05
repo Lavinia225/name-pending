@@ -29,13 +29,13 @@ If you are having trouble, or would like to make a request or query, contact the
 ## Sources
 
 Game Background by my good presently anonymous friend
-Eraser Icon: https://www.flaticon.com/free-icons/rubber
+[Eraser Icon](https://www.flaticon.com/free-icons/rubber)
 
 ### Songs
 
-Angel Eyes, Legends, and Leave the World Tonight by Kim Lightyear: https://pixabay.com/users/lightyeartraxx-26697863/
-Man is he Mega by Geoffrey Burch: https://pixabay.com/users/geoffreyburch-5739114/
-DNX by DSTechnician: https://pixabay.com/users/dstechnician-26430546/
+Angel Eyes, Legends, and Leave the World Tonight by [Kim Lightyear](https://pixabay.com/users/lightyeartraxx-26697863/)
+Man is he Mega by [Geoffrey Burch](https://pixabay.com/users/geoffreyburch-5739114/)
+DNX by [DSTechnician](https://pixabay.com/users/dstechnician-26430546/)
 
 ## License
 
