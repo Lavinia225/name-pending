@@ -3,6 +3,8 @@
 Sketch Shooter is a small game and game dev tool. For the game part, it involves the player trying to hit a moving target.
 For the dev part, you can create players and mobs to experiance in the game by drawing them out, filling their fields, and submitting them to the backend server.
 
+[Click me to see the backend repo.](https://github.com/Lavinia225/sketch-shooter-backend)
+
 ## Usage
 
 #### Game
@@ -27,7 +29,7 @@ Pull requests are welcome. Please be sure to email or open an issue related to t
 
 ## Project Status
 
-In-Progress.
+Completed. Future Plans are up in the air.
 
 #### Potential Future Plans
 
