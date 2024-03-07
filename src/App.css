@@ -270,3 +270,13 @@ nav a:active, a:hover{
     margin-top: 40px;
     max-width: 400px;
 }
+
+#controls {
+    position: absolute;
+    top: 100px;
+    margin-left: 100px;
+}
+
+#controls > h4 {
+    text-align: center;
+}

@@ -66,7 +66,7 @@ function App() {
         <Route path='/dev'>
           <DevMode mobs={mobs} players={players} updateEntities={updateEntities}/>
         </Route>
-        <Route path='/home'>
+        <Route path='/'>
           <Home />
         </Route>
       </Switch>

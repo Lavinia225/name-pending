@@ -77,6 +77,14 @@ function Game({players, mobs}){
                 <Entity entity={mobs[activeMob]} isMob={true} isGame={true} />
                 <Entity playerPos={playerPos} entity={players[activePlayer-1]} isMob={false} isGame={true}/>
                 {fired ? <Bullet playerPos={playerPos} exit={handleBulletExit}/> : null}
+            </div>
+            <div id='controls'>
+                <h4>Controls</h4>
+                <ul>
+                    <li>Move Left: A or Left Arrow</li>
+                    <li>Move Right: D or Right Arrow</li>
+                    <li>Shoot: Space</li>
+                </ul>
             </div> 
         </>
         : <PlayerSelect players={players} handleSelect={handleSelect}/>}
