@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import MainHeader from './MainHeader'
 import DevMode from './DevMode'
 import Game from './Game'
+import Home from './Home'
 import '../App.css'
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
         return old
       }
     }
-    }
+  }
   
   return (
     <div className="App">
@@ -66,6 +67,7 @@ function App() {
           <DevMode mobs={mobs} players={players} updateEntities={updateEntities}/>
         </Route>
       </Switch>
+      <Home />
     </div>
   );
 }

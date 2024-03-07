@@ -263,3 +263,10 @@ nav a:active, a:hover{
     animation: 5s infinite Long-Circular;
     animation-timing-function: linear;
 }
+
+#home {
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    max-width: 400px;
+}
