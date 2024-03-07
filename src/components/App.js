@@ -9,17 +9,18 @@ import '../App.css'
 function App() {
   const [players, setPlayers] = useState()
   const [mobs, setMobs] = useState()
+  const [errors, setErrors] = useState([])
 
   useEffect(()=>{
     const link = process.env.REACT_APP_API_URL
 
     fetch(`${link + '/players'}`)
     .then(res => res.json())
-    .then(playerData => setPlayers(playerData))
+    .then(playerData => setPlayers(playerData)).catch(()=>setErrors(["Failed to fetch data."]))
 
     fetch(`${link + '/mobs'}`)
     .then(res => res.json())
-    .then(mobData => setMobs(mobData))
+    .then(mobData => setMobs(mobData)).catch(()=>setErrors(["Failed to fetch data."]))
   }, [])
 
   const cardStyle = document.createElement('link')
@@ -59,6 +60,7 @@ function App() {
   return (
     <div className="App">
       <MainHeader />
+      {errors.length > 0 ? errors.map(error =><p key={error + Math.random * 400} style={{textAlign: 'center', paddingTop: 30}}>{error}</p>) : null}
       <Switch>
         <Route exact path="/game">
           <Game players={players} mobs={mobs}/>
